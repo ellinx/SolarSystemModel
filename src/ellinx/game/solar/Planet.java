@@ -19,8 +19,8 @@ public class Planet extends Star {
 	}
 	
 	public void move() {
-		x = center.x + this.width/2 + longAxis*Math.cos(degree);
-		y = center.y + this.height/2 + shortAxis*Math.sin(degree);
+		x = center.x + center.width/2 + longAxis*Math.cos(degree);
+		y = center.y + center.height/2 + shortAxis*Math.sin(degree);
 		
 		degree += speed;
 
@@ -31,7 +31,7 @@ public class Planet extends Star {
 		
 		ovalWidth = longAxis*2;
 		ovalHeight = shortAxis*2;
-		ovalX = center.x + center.width/2- longAxis;
+		ovalX = center.x + center.width/2 - longAxis;
 		ovalY = center.y + center.height/2 - shortAxis;
 		
 		Color c = g.getColor();
@@ -45,9 +45,11 @@ public class Planet extends Star {
 		
 		super();
 		this.center = center;
+		this.img = GameUtil.getImage(imgPath);
+		this.width = img.getWidth(null);
+		this.height = img.getHeight(null);
 		this.x = center.x + longAxis;
 		this.y  = center.y;
-		this.img = GameUtil.getImage(imgPath);
 		
 		this.longAxis = longAxis;
 		this.shortAxis = shortAxis;

@@ -5,7 +5,7 @@ import java.awt.Image;
 
 public class Star {
 	Image img;
-	double x,y;
+	double x,y;//center position
 	
 	double width,height; //width and height of the picture itself
 	
@@ -21,8 +21,8 @@ public class Star {
 	
 	public Star(Image img, double x, double y) {
 		this(img);
-		this.x = x;
-		this.y = y;
+		this.x = x - width/2;
+		this.y = y - height/2;
 		
 		
 	}
